@@ -9,7 +9,7 @@ let g:snippets_dir = $HOME . "/Desktop/vim/snippets"
 
 let mapleader = ","
 syntax on
-set list
+set nolist
 set background=dark
 colorscheme ron
 set tabstop=4
@@ -217,6 +217,7 @@ let tex_flavor = "tex"
 " NetRw: {{{2
 " ===============
 "let g:netrw_timefmt = "%a %Y-%m-%d  %I-%M-%S %p"
+let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+,\.pyc'
 
 " Functions: {{{1
 " ===============
