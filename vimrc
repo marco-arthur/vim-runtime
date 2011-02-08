@@ -94,7 +94,7 @@ nmap <F11> :tabnew ~/.vimrc<CR>
 " *** F9 *** (vazio)
 nmap <F9> :buffers<CR>
 " *** F8 *** (vazio)
-" *** F7 *** 
+" *** F7 ***
 " Highligh texto procurado
 nmap <F7> :call TurnOnOff("hls")<CR>
 
@@ -219,6 +219,12 @@ let tex_flavor = "tex"
 "let g:netrw_timefmt = "%a %Y-%m-%d  %I-%M-%S %p"
 let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+,\.pyc'
 
+" FuzzyFinder: {{{2
+" ============
+nmap <silent><leader>f :FufFile<CR>
+nmap <silent><leader>d :FufDir<CR>
+nmap <silent><leader>b :FufBuffer<CR>
+
 " Functions: {{{1
 " ===============
 
@@ -323,10 +329,10 @@ endfunction
 
 fun SpellFile()
 " Tres dicionarios:
-" Técnico Computação 
+" Técnico Computação
 " Termos gerais
 " Estrangeirismos
-    let escolhas = 
+    let escolhas =
                 \{'Tecnico': 'tecnico.utf-8.add', 'Geral': 'termos_gerais.utf-8.add',
                 \    'Estrangeiro': 'estrangeirismos.uft-8.add'}
     let escolha = ChooseSomething('Escolha um Dicionário', escolhas, 'Tecnico')
