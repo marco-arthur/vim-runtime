@@ -13,6 +13,3 @@
 [submodule "bundle/ack"]
 	path = bundle/ack
 	url = https://github.com/mileszs/ack.vim.git
-[submodule "colors"]
-	path = colors
-	url = https://github.com/tpope/vim-vividchalk.git

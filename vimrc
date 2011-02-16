@@ -92,7 +92,8 @@ nmap <F11> :tabnew ~/.vimrc<CR>
 
 " *** F10 *** (vazio)
 " *** F9 *** (vazio)
-nmap <F9> :buffers<CR>
+" Clean-up
+nmap <F9> :%s/\s*$//<CR>:%s/\t/    /g<CR>
 " *** F8 *** (vazio)
 " *** F7 ***
 " Highligh texto procurado
