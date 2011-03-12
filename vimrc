@@ -43,8 +43,18 @@ filetype plugin indent on
 " ================
 
 " Leader Maps {{{2
-" Copia para area de copia do X11
-vmap <leader>x "+y
+" paste from x11 clipboar
+nmap <leader>xp ,p"*p,p
+
+" delete a word faster
+nmap <leader>1 diw
+
+" learning
+nmap <leader>a <C-w>n:e ~/notas/lessons.txt<CR>
+
+" todo
+nmap <leader>t <C-w>n:e todo.txt<CR>
+
 
 " Fazendo Spell checking para ingles
 nmap <leader>se :set spell spelllang=en_us<CR>
@@ -119,6 +129,9 @@ nmap H :tabprevious<CR>
 
 " Veja em Tricks
 nmap K yaw:Man <C-R>"<CR>
+
+" completion of filenames
+imap <C-l> <C-X><C-F>
 
 "  Get on tabs
 nmap L :tabnext<CR>
