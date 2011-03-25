@@ -55,7 +55,6 @@ nmap <leader>a <C-w>n:e ~/notas/lessons.txt<CR>
 " todo
 nmap <leader>t <C-w>n:e todo.txt<CR>
 
-
 " Fazendo Spell checking para ingles
 nmap <leader>se :set spell spelllang=en_us<CR>
 
@@ -88,6 +87,9 @@ nmap <leader>r :call TurnOnOff("cul")<CR>
 
 " Ver Caracteres de controle
 nmap <leader>j :call TurnOnOff("list")<CR>
+
+" Clean spaces
+nmap <leader>cs :%s/\s\+$//<CR>
 
 
 " }}}2
