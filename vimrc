@@ -32,6 +32,7 @@ set autoread
 set foldmethod=marker
 set foldlevelstart=0
 set foldtext=MyFoldText()
+set foldmethod=indent
 
 filetype off
 call pathogen#runtime_append_all_bundles()
@@ -43,6 +44,12 @@ filetype plugin indent on
 " ================
 
 " Leader Maps {{{2
+" open window for browse
+nmap <leader>e <C-W>n:e .<CR>
+
+" Caio's Escape suggestion
+imap jj <Esc>
+
 " paste from x11 clipboar
 nmap <leader>xp ,p"*p,p
 
