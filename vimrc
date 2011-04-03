@@ -148,6 +148,11 @@ nmap H :tabprevious<CR>
 
 " Procura por texto selecionado. Ver :he visual.txt, lin 500
 vmap X y/<C-R>"<CR>
+
+" Jump to Place Holder
+nmap <C-j> :call JumpToPlaceHolder()<CR>
+vmap <C-j> <Esc><C-j>
+
 " }}}2
 
 " ======
@@ -251,6 +256,7 @@ nmap <silent><leader>b :FufBuffer<CR>
 " Functions: {{{1
 " ===============
 
+" TODO: delete me
 function CommentLine( cchar )
     " Strong feelings say: should be based on ft. But...
     " ... 'comments is a list very confusing, and ...
@@ -270,6 +276,19 @@ function CommentLine( cchar )
     exe s:imap
 endfunction
 
+function JumpToPlaceHolder()
+    " Jumps to a place Holder in the file
+
+    let ph = "<+.*+>"
+    let match = search("<+.*+>")
+
+    " Found place holder: visually select it
+    if ( match )
+        normal vf>
+    endif
+endfunction
+
+" TODO: delete me
 function RegisterMap(my_map)
   " Hi, So you don't remember all your maps ? Register it !
   " call RegisterMap({'name':'paste', 'map':'<leader>p', 'command':':call TurnOnOff("paste")<CR>', 'mode':'normal'})
@@ -308,6 +327,7 @@ function RegisterMap(my_map)
   endif
 endfunction
 
+" TODO: delete me
 function ShowRegisteredMaps()
   " Nice, you registered, now you want to know
   " Author: Marco Arthur
@@ -350,6 +370,7 @@ function! ChooseSomething(question, table, default)
     endif
 endfunction
 
+" TODO: improve me or Delete me
 fun SpellFile()
 " Tres dicionarios:
 " Técnico Computação
@@ -365,9 +386,11 @@ fun SpellFile()
 endfun
 
 
+" TODO: Improve me or Delete me
 function! UpSideDown()
     "TURN  UP/DOWN ARROWS A POWERFUL LIST CURSOR
-  "PAGE-DOWN SHOWS LIST
+    "PAGE-DOWN SHOWS LIST
+    
     let options = {1: 'spell', 2: 'clist', 3: 'buffers', 4: 'erase'}
     let choice = ChooseSomething('Set Up/Down to what ?  ', options, 'none')
 
@@ -389,11 +412,8 @@ function! UpSideDown()
     endif
 endfunction
 
-function Statistcs( work )
-    " So you are working a lot ? How much ? Call
-    " Statistcs( "time" ) or Statistcs( "commands" ) or Statistcs( "all" )
-endfunction
 
+" TODO: study me
 function! MyFoldText()
     let line = getline(v:foldstart)
 
@@ -569,4 +589,5 @@ function! s:Median(nums)
         return (nums[l/2] + nums[(l/2)-1]) / 2
     endif
 endfunction
+
 " }}}1
